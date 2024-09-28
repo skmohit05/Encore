@@ -1,0 +1,18 @@
+EncoreCommons/target/
+EncoreDB/target/
+EncoreDBManager/target/
+EncoreModel/target/
+EncoreParentPOM/target/
+EncoreSecurity/target/
+EncoreWebService/target/
+
+# Eclipse specific
+.project
+.classpath
+.settings/
+
+# IntelliJ IDEA specific
+.idea/
+*.iml
+*.iws
+out/

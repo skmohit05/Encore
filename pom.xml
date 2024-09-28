@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.healthcare.encore</groupId>
+    <artifactId>encore-project-build-pom</artifactId>
+    <version>2020.1-SNAPSHOT</version>
+    <name>Encore Application Project Build POM</name>
+    <description>Encore Application Project Build POM</description>
+    <packaging>pom</packaging>
+    <modules>
+        <module>EncoreParentPOM</module>
+		<module>EncoreCommons</module>
+        <module>EncoreModel</module>
+        <module>EncoreDB</module>
+        <module>EncoreDBManager</module>
+		<module>EncoreSecurity</module>
+        <module>EncoreWebService</module>
+    </modules>
+	
+</project>

@@ -1,0 +1,60 @@
+The document below explains how to build and deploy encore app webservices. 
+Build is to be executed in local machine and war file needs to be deployed to AWS VM
+
+Pre-setup for building the project
+----------------------------------
+1. Java
+  a. Install Java from https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/tag/jdk8u242-b08. Download based on OS and install Java
+  b. Set JAVA_HOME environment variable to installed folder
+  c. Update PATH enviroment variable to JAVA_HOME/bin (This would be set by installer, if not set please add it manually)
+2. Maven
+  a. Download https://mirror.olnevhost.net/pub/apache/maven/maven-3/3.8.1/binaries/apache-maven-3.8.1-bin.zip and extract to suitable folder
+  b. Set MVN_HOME enviroment variable, to extracted folder
+  c. Update PATH enviroment variable to MVN_HOME/bin
+
+Build
+-----
+1. Checkout project from github (https://github.com/encoretimeapp/encoretime) to a suitable folder
+2. cd to EncoreParentPOM
+3. run command: mvn clean install
+4. cd to parent folder(project checkout folder)
+5. run command: mvn clean install 
+6. After Step 5, the final built war file encore-webservice-2020.1-SNAPSHOT.jar will be available in EncoreWebService\target folder
+
+Deployment
+----------
+1. Create suitable folder in VM
+2. Copy encore war file to folder
+3. Run java -jar [war name] 
+
+Above deployment steps provide information for setting up fresh
+
+AWS VM
+------
+-> In VM start.sh file starts webservice and is automatically invoked on system startup (sudo systemctl start/stop/status encoreapp)
+-> EncoreWebService project folder has deploy.bat file, when run from EncoreWebService location, it deploys war from local machine to VM
+
+-> Folder structure in AWS VM
+-----------------------------
+Folder path:/data/encoreapp
+ |
+ |-- certs (folder)
+     |-- encore.keystore
+ |-- application.properties
+ |-- database.properties
+ |-- encore-webservice-2020.1-SNAPSHOT.jar
+ |-- log4j2.xml
+ |-- logs (folder - will get automatically created if not present, application events are logged to this folder)
+     |-- ... (log monthly folders)
+	 |-- encoreapp.log
+ |-- start.sh
+ 
+-> Settings customizations
+--------------------------
+1. certs and encore.keystore - Deploy SSL certificates (Refer Deployig_SSL.txt)
+2. application.properties - overrides default settings, if SSL changes update this file (runs webservice in port 8443)
+3. database.properties - overrides default settings, update this if required to connect to different database/server
+4. log4j2.xml - settings used for logging, no changes required except for debugging
+5. start.sh - starts web service war file (added to systemctl with name encoreapp)
+    
+

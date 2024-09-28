@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+	<include file="db/tables/EnumCommunicationChannelType.sql"/>
+	<include file="db/tables/EnumSpecialityType.sql"/>
+	<include file="db/tables/EnumJobType.sql"/>
+	<include file="db/tables/EnumShiftType.sql"/>
+	<include file="db/tables/EnumFacilityType.sql"/>
+	<include file="db/tables/EnumFacilitySubType.sql"/>
+	<include file="db/tables/EnumAssignmentType.sql"/>
+	<include file="db/tables/EnumUserType.sql"/>
+	<include file="db/tables/EnumUserStatusType.sql"/>
+	<include file="db/tables/EnumJobPostingStatusType.sql"/>
+	<include file="db/tables/EnumFieldType.sql"/>
+	<include file="db/tables/EnumOrganizationType.sql"/>
+	<include file="db/tables/EnumPriorityFeatureType.sql"/>
+	<include file="db/tables/EnumCompensationType.sql"/>
+	<include file="db/tables/EnumMFAType.sql"/>
+	<include file="db/tables/EnumUSStatesType.sql"/>
+	<include file="db/tables/Organization.sql"/>
+	<include file="db/tables/Users.sql"/>
+	<include file="db/tables/UserAuthentication.sql"/>
+	<include file="db/tables/UserCommunicationPref.sql"/>
+	<include file="db/tables/MedicalJobSeekerExtendedInfo.sql"/>
+	<include file="db/tables/MedicalJobSeekerJobInfo.sql"/>
+	<include file="db/tables/MedicalJobSeekerJobs.sql"/>
+	<include file="db/tables/MedicalEmployerExtendedInfo.sql"/>
+	<include file="db/tables/MedicalEmployerJobPosting.sql"/>
+	<include file="db/tables/MedicalJobSeekerSavedJobs.sql"/>
+	<include file="db/tables/MedicalJobSeekerJobApplicationInfo.sql"/>
+	<include file="db/tables/MedicalJobSeekerStateLevelInfo.sql"/>
+	<include file="db/tables/MedicalJobSeekerSurvey.sql"/>
+	<include file="db/tables/MedicalEmployerSurvey.sql"/>
+
+    <include file="db/data/EnumCommunicationChannelType.sql"/>
+	<include file="db/data/EnumSpecialityType.sql"/>
+	<include file="db/data/EnumJobType.sql"/>
+	<include file="db/data/EnumShiftType.sql"/>
+	<include file="db/data/EnumFacilityType.sql"/>
+	<include file="db/data/EnumFacilitySubType.sql"/>
+	<include file="db/data/EnumAssignmentType.sql"/>
+	<include file="db/data/EnumFieldType.sql"/>
+	<include file="db/data/EnumUserStatusType.sql"/>
+	<include file="db/data/EnumJobPostingStatusType.sql"/>
+	<include file="db/data/EnumUserType.sql"/>
+	<include file="db/data/EnumOrganizationType.sql"/>
+	<include file="db/data/EnumMFAType.sql"/>
+	<include file="db/data/EnumPriorityFeatureType.sql"/>
+	<include file="db/data/EnumCompensationType.sql"/>
+	<include file="db/data/EnumUSStatesType.sql"/>
+	<include file="db/data/Organization.sql"/>
+	<include file="db/data/Users.sql"/>
+	<include file="db/data/UserAuthentication.sql"/>
+	<include file="db/data/MedicalEmployerExtendedInfo.sql"/>
+	<include file="db/data/MedicalJobSeekerExtendedInfo.sql"/>
+	<include file="db/data/MedicalJobSeekerJobInfo.sql"/>
+	<include file="db/data/MedicalJobSeekerJobs.sql"/>
+	<include file="db/data/MedicalJobSeekerStateLevelInfo.sql"/>
+
+</databaseChangeLog>

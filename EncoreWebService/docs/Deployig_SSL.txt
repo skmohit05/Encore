@@ -1,0 +1,31 @@
+Pre-requisites
+--------------
+1. Certificate file
+2. Private Key
+
+Generating keystore file
+------------------------
+Step 1: Generatig PKCS12 file (Intermediate file combining key and cert, before adding to keystore)
+openssl pkcs12 -export -in 5da7308de3fd6e56.crt -inkey generated-private-key.txt -out server.p12 -name springboot -CAfile gd_bundle-g2-g1.crt -caname root
+
+Step 2: Creating keystore file from PKCS12 generated in Step 1
+keytool -importkeystore -srckeystore server.p12 -destkeystore encore.keystore -deststoretype pkcs12
+
+Password needs to be provided in both steps, provide a strong password. If password is requested multiple times (source and destination keystore), provide the same password in both steps
+
+Step 3 (Optional): Check certificate added to keystore
+keytool -list -keystore encoretime.keystore
+
+Check keystore type is PKCS12, check for springboot alias -> is a PrivateKeyEntry and certificate thumbprint matches the original crt file
+
+
+Deployment in server
+--------------------
+1. Place keystore file specific path (in VM stored in certs folder)
+2. Open application.properties in deployment folder and add the below properties
+
+  server.port=8443                                       # SSL port
+  server.ssl.key-store=certs/encoretime.keystore         # Path to location of keystore file
+  server.ssl.key-store-password=8cbK48kMQ3nPcNJH         # Password used durig step 2 (running keytool)
+  server.ssl.keyStoreType=PKCS12
+  server.ssl.keyAlias=springboot                         # alias name provided in step 1 (running openssl)
